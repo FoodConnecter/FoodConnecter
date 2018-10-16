@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Food_Connecter.OsusowakeDetailPage"
+             Title="{Binding food}">
+    <StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="提供者" FontSize="Large" Margin="0, 20, 0, 20"/>
+                    <Label Text="{Binding userName}" FontSize="Large" Margin="0, 20, 0, 20"/>
+                </StackLayout>
+                <Image Source="{Binding imageUrl}" />
+                <Label Text="{Binding Food}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="{Binding foodDate}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="食品の説明" FontSize="Small" />
+                <Label Text="{Binding Info}" FontSize="Medium" />
+            </StackLayout>
+        </ScrollView>
+        <Button Text="この食材を受け取る" Clicked="OnUketoriClicked" HorizontalOptions="CenterAndExpand" BackgroundColor="Orange" VerticalOptions="End"/>
+    </StackLayout>
+    
+    
+</ContentPage>
