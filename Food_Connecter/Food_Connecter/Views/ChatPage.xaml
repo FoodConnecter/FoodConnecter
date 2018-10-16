@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Food_Connecter.ChatPage"
+             Title="連絡用チャット">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="refresh.png" Clicked="refreshChat" />
+    </ContentPage.ToolbarItems>
+    <AbsoluteLayout>
+        <Label Text="受け取り日時や場所などの指定にご利用ください" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5, 0, 1, 0.1" BackgroundColor="Gray"/>
+        <ScrollView x:Name="scroll" VerticalOptions="Fill" AbsoluteLayout.LayoutBounds="0.5, 0.2, 1, 0.8" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout x:Name="Stack"/>
+        </ScrollView>
+        <StackLayout x:Name="ChatText" Orientation="Horizontal" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.1">
+            <Entry x:Name="ChatContent" HorizontalOptions="FillAndExpand" Focused="entryFocused" Unfocused="entryUnFocused"/>
+            <Button x:Name="Send" Text="送信" WidthRequest="50" BackgroundColor="Teal" TextColor="White" Clicked="SendMessage"/>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

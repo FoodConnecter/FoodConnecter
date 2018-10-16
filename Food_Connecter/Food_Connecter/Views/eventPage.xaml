@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Food_Connecter.eventPage"
+             Title="イベント">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="logo.jpg" Priority="-1" Order="Primary"/>
+        <ToolbarItem x:Name="AddEventPage" Text="+" Clicked="manageButton_Clicked" Priority="1" Order="Primary"/>
+        <ToolbarItem x:Name="joinedEvent" Text="参加予定" Clicked="viewEvent_Clicked" Priority="2" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" IsPullToRefreshEnabled="true" Refreshing="refreshList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="300">
+                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                            <Label x:Name="eventName" Text="{Binding eventName}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                            <Label x:Name="city" Text="{Binding City}" VerticalTextAlignment="End" FontSize="Small" />
+                            <Label x:Name="Place" Text="{Binding Place}" VerticalTextAlignment="End" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="Stack" IsVisible="false">
+            <ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="activity_indicator" Color="#4D7EE1" IsRunning="true"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
